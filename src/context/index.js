@@ -1,17 +1,24 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useState } from "react";
 
-const AppContext = createContext();
+export const AppContext = createContext();
 
 const reducer = (state, action) => {
-  return state;
+  switch (action.type) {
+    case "LOAD_OUR_STORY":
+      console.log("reducer LOAD_OUR_STORY", action);
+      return { ...state, ourStory: action.payload };
+    default:
+      return state;
+  }
 };
 
 const initialState = {
-  texts: {}
+  ourStory: "Story"
 };
 
 const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <AppContext.Provider value={{ state, dispatch }}>
       {children}
