@@ -1,34 +1,11 @@
-import React, { Fragment, useContext, useEffect } from "react";
-import { AppContext } from "../context";
-
-const apiCallFake = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({ ourStoy: "Base de dato" });
-    }, 2000);
-  });
-};
+import React, { Fragment } from "react";
 
 const Contact = () => {
-  // console.log(AppContext);
-  const { state, dispatch } = useContext(AppContext);
-
-  useEffect(() => {
-    const fetchStory = async () => {
-      const data = await apiCallFake();
-
-      dispatch({ type: "LOAD_OUR_STORY", payload: data.ourStoy });
-    };
-
-    fetchStory();
-  }, []);
-
   return (
     <Fragment key="product-container">
       <section id="contact" data-stellar-background-ratio="0.5">
         <div className="container">
-          {state.ourStory}
-          {/* <div className="row">
+          <div className="row">
             <div
               className="wow fadeInUp col-md-6 col-sm-12"
               data-wow-delay="0.4s"
@@ -116,7 +93,7 @@ const Contact = () => {
                 </div>
               </form>
             </div>
-          </div> */}
+          </div>
         </div>
       </section>
     </Fragment>
