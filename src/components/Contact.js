@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment, useState, useContext, useEffect } from "react";
 import { AppContext } from "../context";
 
 const apiCallFake = () => {
@@ -11,8 +11,15 @@ const apiCallFake = () => {
 
 const Contact = () => {
   // console.log(AppContext);
-  const { state, dispatch } = useContext(AppContext);
-
+  const initalStateValues = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''    
+  }
+  const [values, setValues] = useState(initalStateValues);
+  // const { state, dispatch } = useContext(AppContext);
+/* 
   useEffect(() => {
     const fetchStory = async () => {
       const data = await apiCallFake();
@@ -21,7 +28,17 @@ const Contact = () => {
     };
 
     fetchStory();
-  }, []);
+  }, []); */
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('...Sendind Data')
+  }
+
+  const handleChange = (e) =>{
+    const {name, value} = e.target;
+    setValues({...values, [name]: value})
+  }
 
   return (
     <Fragment key="product-container">
@@ -55,6 +72,7 @@ const Contact = () => {
                 className="wow fadeInUp"
                 id="contact-form"
                 data-wow-delay="0.8s"
+                onSubmit={handleSubmit}
               >
                 <h6 className="text-success">
                   Your message has been sent successfully.
@@ -72,6 +90,7 @@ const Contact = () => {
                     id="cf-name"
                     name="name"
                     placeholder="Full name"
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -82,6 +101,7 @@ const Contact = () => {
                     id="cf-email"
                     name="email"
                     placeholder="Email address"
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -92,6 +112,7 @@ const Contact = () => {
                     id="cf-subject"
                     name="subject"
                     placeholder="Subject"
+                    onChange={handleChange}
                   />
 
                   <textarea
@@ -100,6 +121,7 @@ const Contact = () => {
                     id="cf-message"
                     name="message"
                     placeholder="Tell about your project"
+                    onChange={handleChange}
                   ></textarea>
 
                   <button
