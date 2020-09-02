@@ -27,12 +27,9 @@ const Contact = () => {
     <Fragment key="product-container">
       <section id="contact" data-stellar-background-ratio="0.5">
         <div className="container">
-          {state.ourStory}
-          {/* <div className="row">
-            <div
-              className="wow fadeInUp col-md-6 col-sm-12"
-              data-wow-delay="0.4s"
-            >
+          {/* {state.ourStory} */}
+          {<div className="row">
+            <div className="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.4s">
               <div id="google-map">
                 <iframe
                   title="Google Map"
@@ -116,7 +113,7 @@ const Contact = () => {
                 </div>
               </form>
             </div>
-          </div> */}
+          </div>}
         </div>
       </section>
     </Fragment>
