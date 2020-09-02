@@ -38,6 +38,7 @@ const Contact = () => {
   const handleChange = (e) =>{
     const {name, value} = e.target;
     setValues({...values, [name]: value})
+    console.log(values)
   }
 
   return (
@@ -67,8 +68,6 @@ const Contact = () => {
               </div>
 
               <form
-                action="#"
-                method="post"
                 className="wow fadeInUp"
                 id="contact-form"
                 data-wow-delay="0.8s"
