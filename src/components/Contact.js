@@ -25,7 +25,7 @@ const Contact = () => {
                   className="section-title wow fadeInUp"
                   data-wow-delay="0.1s"
                 >
-                  <h2>Contact Us</h2>
+                  <h2>-- Contact Us --</h2>
                 </div>
               </div>
 
