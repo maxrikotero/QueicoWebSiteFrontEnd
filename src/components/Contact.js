@@ -1,13 +1,13 @@
-import React, { Fragment, useState, useContext, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import Map from './Map'
 
-const apiCallFake = () => {
+/* const apiCallFake = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({ ourStoy: "Base de dato" });
     }, 2000);
   });
-};
+}; */
 
 const Contact = () => {
   // console.log(AppContext);

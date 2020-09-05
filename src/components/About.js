@@ -1,69 +1,58 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, Component } from "react";
 import aboutImage from '../asset/images/about-image.jpg'
 
-const infoInital = {
-  subtitle: '',
-  mainTitle: '',
-  parragrahp: '',
-  imageURL: ''
-}
-
-const [info, SetInfo] = useState();
-
 const About = () => {
-  return (
-    <Fragment key="About-container">
-      <section id="about" data-stellar-background-ratio="0.5">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 col-sm-12">
-              <div className="about-info">
-                <div
-                  className="section-title wow fadeInUp"
-                  data-wow-delay="0.2s"
-                >
-                  <h4>Read our story</h4>
-                  <h2>We've been Making The Delicious Foods Since 1999</h2>
-                </div>
 
-                <div className="wow fadeInUp" data-wow-delay="0.4s">
-                  <p>
-                    Fusce hendrerit malesuada lacinia. Donec semper semper sem
-                    vitae malesuada. Proin scelerisque risus et ipsum semper
-                    molestie sed in nisi. Ut rhoncus congue lectus, rhoncus
-                    venenatis leo malesuada id.
-                  </p>
-                  <p>
-                    Sed elementum vel felis sed scelerisque. In arcu diam,
-                    sollicitudin eu nibh ac, posuere tristique magna. You can
-                    use this template for your cafe or restaurant website.
-                    Please tell your friends about{" "}
-                    <a
-                      href="https://plus.google.com/+templatemo"
-                      target="_parent"
-                    >
-                      templatemo
-                    </a>
-                    . Thank you.
-                  </p>
+  const initialInfo = {
+    title: 'Testing Hooks',
+    subTitle: 'Example',
+    paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+    imgaeURL: ''
+  }
+
+  const [info, SetInfo] = useState(initialInfo);
+
+    return (
+      <Fragment key="About-container">
+        <section id="about" data-stellar-background-ratio="0.5">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6 col-sm-12">
+                <div className="about-info">
+                  <div
+                    className="section-title wow fadeInUp"
+                    data-wow-delay="0.2s"
+                  >
+                    <h4>{info.subTitle}</h4>
+                    <h2>{info.title}</h2>
+                  </div>  
+                  <div className="wow fadeInUp" data-wow-delay="0.4s">
+                    <p>{info.paragraph}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="col-md-6 col-sm-12">
-              <div className="wow fadeInUp about-image" data-wow-delay="0.6s">
-                <img
-                  src={aboutImage}
-                  className="img-responsive"
-                  alt=""
-                />
+  
+              <div className="col-md-6 col-sm-12">
+                <div className="wow fadeInUp about-image" data-wow-delay="0.6s">
+                  <img
+                    src={aboutImage}
+                    className="img-responsive"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </Fragment>
-  );
-};
+        </section>
+      </Fragment>
+    );
+}
+
+
+
+
+
+
+
 
 export default About;
