@@ -1,4 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
+import aboutImage from '../asset/images/about-image.jpg'
+
+const infoInital = {
+  subtitle: '',
+  mainTitle: '',
+  parragrahp: '',
+  imageURL: ''
+}
+
+const [info, SetInfo] = useState();
 
 const About = () => {
   return (
@@ -43,7 +53,7 @@ const About = () => {
             <div className="col-md-6 col-sm-12">
               <div className="wow fadeInUp about-image" data-wow-delay="0.6s">
                 <img
-                  src="images/about-image.jpg"
+                  src={aboutImage}
                   className="img-responsive"
                   alt=""
                 />
