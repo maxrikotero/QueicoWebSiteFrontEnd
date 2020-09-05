@@ -9,6 +9,7 @@ import "./asset/css/templatemo-style.css";
 import App from "./App";
 import Layout from "../src/components/Layout";
 import AppContextProvider from "../src/context";
+import 'leaflet/dist/leaflet.css'
 
 const rootElement = document.getElementById("root");
 

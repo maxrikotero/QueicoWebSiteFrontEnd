@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useContext, useEffect } from "react";
-import { AppContext } from "../context";
+import Map from './Map'
 
 const apiCallFake = () => {
   return new Promise((resolve, reject) => {
@@ -18,17 +18,6 @@ const Contact = () => {
     message: ''    
   }
   const [values, setValues] = useState(initalStateValues);
-  // const { state, dispatch } = useContext(AppContext);
-/* 
-  useEffect(() => {
-    const fetchStory = async () => {
-      const data = await apiCallFake();
-
-      dispatch({ type: "LOAD_OUR_STORY", payload: data.ourStoy });
-    };
-
-    fetchStory();
-  }, []); */
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,18 +34,10 @@ const Contact = () => {
     <Fragment key="product-container">
       <section id="contact" data-stellar-background-ratio="0.5">
         <div className="container">
-          {/* {state.ourStory} */}
-          {<div className="row">
-            <div className="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.4s">
-              <div id="google-map">
-                <iframe
-                  title="Google Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945"
-                  allowfullscreen
-                ></iframe>
-              </div>
+          <div className="row">
+            <div className="col-md-6">
+              <Map/>
             </div>
-
             <div className="col-md-6 col-sm-12">
               <div className="col-md-12 col-sm-12">
                 <div
@@ -134,7 +115,7 @@ const Contact = () => {
                 </div>
               </form>
             </div>
-          </div>}
+          </div>
         </div>
       </section>
     </Fragment>
